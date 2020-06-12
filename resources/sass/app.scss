@@ -1,0 +1,46 @@
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+html, body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+.container {
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+}
+
+.btn-primary {
+    background-color: rgb(29, 161, 242);
+}
+
+.text-primary {
+    color: rgb(27, 149, 224) !important;
+}
+
+.text-ignore {
+    opacity: 0.3;
+}
+
+.dataTables_wrapper thead tr {
+    color: #FFF;
+    background-color: #007bff;
+}
+.dataTables_wrapper tr.odd {
+    background-color: #F8F8F8;
+}
+.dataTables_wrapper tr.text-ignore2 {
+    color: #BBB;
+}
+.dataTables_wrapper tr.text-ignore2:hover {
+    color: #BBB;
+}
+.dataTables_wrapper tfoot {
+    display: none !important;
+}
