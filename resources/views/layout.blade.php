@@ -17,7 +17,7 @@
         <meta name="twitter:site" content="@bugbountytips"/>
         <meta name="twitter:creator" content="@gwendallecoguic"/>
 
-        <meta property="og:title" content="git|grep" />
+        <meta property="og:title" content="bugbountytips" />
         <meta property="og:description" content="bugbountytips allows you to search through the tips posted on Twitter by hunters" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://bugbountytips.me/" />
