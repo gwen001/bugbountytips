@@ -62,6 +62,7 @@ class TweetsDataTable extends DataTable
                     ->minifiedAjax()
                     ->dom('Bfrtip')
                     ->orderBy(1)
+                    ->pageLength(200)
                     ->buttons(
                         Button::make('create')
                     );
