@@ -17,18 +17,16 @@
             <div class="p-3"></div>
 
             <div class="row">
-                <div class="col-12">
-                    <div id="results-container">
-                        <div v-for="result in results" :key="result.id">
-                            <Tweet v-bind:id="result.twitter_id"><div class="spinner"></div></Tweet>
-                        </div>
+                <div id="results-container" class="d-flex flex-wrap">
+                    <div v-for="result in results" :key="result.id">
+                        <Tweet v-bind:id="result.twitter_id"><div class="spinner"></div></Tweet>
                     </div>
-                    <div id="result-error" class="d-none alert alert-danger text-center" role="alert">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div id="search-spinner" class="spinner-border text-primary d-none" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
+                </div>
+                <div id="result-error" class="d-none alert alert-danger text-center" role="alert">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div id="search-spinner" class="spinner-border text-primary d-none" role="status">
+                        <span class="sr-only">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -78,26 +76,9 @@
     label {
         max-width: 120px !important;
     }
-    iframe {
-        display: inline-block;
-        /* margin:  0.25rem; */
-        padding:  1rem;
-        width:  100%;
-        margin-top: 0px !important;
-        /* float: left; */
-        /* margin-top: 0px !important;
+    twitter-widget, iframe {
         margin-right: 10px;
-        max-width: 220px !important; */
-    }
-
-    #results-container {
-        -moz-column-width: 18em;
-        -webkit-column-width: 18em;
-        -moz-column-gap: 1em;
-        -webkit-column-gap: 1em;
-    }
-    #results-container input {
-        margin-bottom: 5px;
-        width: 100%;
+        max-width: 220px !important;
+        width: 220px !important;
     }
 </style>
