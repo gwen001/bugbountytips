@@ -62,7 +62,7 @@
             async searchTweets(e) {
                 this.results = [];
                 // alert(this.q);
-                await axios.get('http://bugbountytips.test.net/api/tweets?q='+this.q).then((res) => {
+                await axios.get('/api/tweets?q='+this.q).then((res) => {
                     this.results = res.data;
                     this.focusInput();
                 })

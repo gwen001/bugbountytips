@@ -2046,7 +2046,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.results = []; // alert(this.q);
 
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://bugbountytips.test.net/api/tweets?q=' + _this.q).then(function (res) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/tweets?q=' + _this.q).then(function (res) {
                   _this.results = res.data;
 
                   _this.focusInput();
