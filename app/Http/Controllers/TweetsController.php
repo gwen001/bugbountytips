@@ -13,9 +13,9 @@ class TweetsController extends Controller
         $q = $request->get('q');
 
         if( $q ) {
-            $tweets = Tweet::where('message', 'like', "%{$q}%")->get();
+            $tweets = Tweet::where('message', 'like', "%{$q}%")->where('ignore', '=', '0')->get();
         } else {
-            $tweets = Tweet::all();
+            $tweets = Tweet::where('ignore', '=', '0')->get();
         }
 
         return response($tweets->jsonSerialize(), Response::HTTP_OK);
