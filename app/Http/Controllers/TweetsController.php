@@ -10,12 +10,15 @@ class TweetsController extends Controller
 {
     public function index(Request $request)
     {
-        $q = $request->get('q');
+        $query = $request->get('q');
+        $page = $request->get('p');
+        $limit = 20;
+        $skip = $page * $limit;
 
-        if( $q ) {
-            $tweets = Tweet::where('message', 'like', "%{$q}%")->where('ignore', '=', '0')->get();
+        if( $query ) {
+            $tweets = Tweet::where('message', 'like', "%{$query}%")->where('ignore', '=', '0')->skip($skip)->take($limit)->get();
         } else {
-            $tweets = Tweet::where('ignore', '=', '0')->get();
+            $tweets = Tweet::where('ignore', '=', '0')->skip($skip)->take($limit)->get();
         }
 
         return response($tweets->jsonSerialize(), Response::HTTP_OK);

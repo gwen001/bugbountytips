@@ -1,8 +1,8 @@
 <template>
     <div class="row">
         <div class="col-12">
-            <form @submit="searchTweets" v-on:submit.prevent="onSubmit">
-                <input type="hidden" id="page" name="page" value="1">
+            <form v-on:submit.prevent="onSubmit">
+                <input type="hidden" id="page" name="p" v-model="p">
                 <div class="form-group row">
                     <label for="q" class="col-2 col-form-label">Search for:</label>
                     <div class="col-2">
@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <div id="results-container" class="d-flex flex-wrap">
                         <div v-for="result in results" :key="result.id">
-                            <Tweet v-bind:id="result.twitter_id"><div class="spinner"></div></Tweet>
+                            <Tweet v-bind:id="result.twitter_id"></Tweet>
                         </div>
                     </div>
                     <div id="result-error" class="d-none alert alert-danger text-center" role="alert">
@@ -48,6 +48,7 @@
         data: function () {
             return {
                 q: '',
+                p: 0,
                 results: []
             }
         },
@@ -60,15 +61,21 @@
                 this.$refs.q.focus();
             },
             async searchTweets(e) {
-                this.results = [];
+                // this.results = [];
                 // alert(this.q);
-                await axios.get('/api/tweets?q='+this.q).then((res) => {
-                    this.results = res.data;
-                    this.focusInput();
+                await axios.get('/api/tweets?q='+this.q+'&p='+this.p).then((res) => {
+                    if( res.data && res.data.length ) {
+                        this.results = this.results.concat( res.data );
+                        this.p++;
+                        window.setTimeout( this.searchTweets, 3000 );
+                    }
+                    // this.focusInput();
                 })
             },
             onSubmit() {
-                ;
+                this.results = [];
+                this.p = 0;
+                this.searchTweets();
             }
         }
     }
