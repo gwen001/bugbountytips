@@ -31,8 +31,12 @@ class CreateTweetsTable extends Migration
         //     $table->dropColumn('keywords');
         // });
 
+        // Schema::table('tweets', function (Blueprint $table) {
+        //     $table->timestamp('tweeted_at',0)->nullable();
+        // });
+
         Schema::table('tweets', function (Blueprint $table) {
-            $table->timestamp('tweeted_at',0)->nullable();
+            $table->string('twitter_id', 32)->unique()->change();
         });
     }
 
