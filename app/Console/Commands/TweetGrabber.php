@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Tweet;
-use stdClass;
 use Twitter;
 
 class TweetGrabber extends Command
@@ -14,7 +13,7 @@ class TweetGrabber extends Command
      *
      * @var string
      */
-    protected $signature = 'tweet:grab {tweet?} {--nolimit}';
+    protected $signature = 'tweet:grab {tweet?} {--nolimit} {--maxid=}';
 
     /**
      * The console command description.
@@ -82,7 +81,7 @@ class TweetGrabber extends Command
     {
         echo "Grabbing all tweets\n";
         $nolimit = $this->option('nolimit');
-        $max_id = '';
+        $max_id = $this->option('maxid') ? $this->option('maxid') : '';
         $loop = true;
         $n = 0;
 
