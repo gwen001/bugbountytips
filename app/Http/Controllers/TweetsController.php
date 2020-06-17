@@ -16,9 +16,9 @@ class TweetsController extends Controller
         $skip = $page * $limit;
 
         if( $query ) {
-            $tweets = Tweet::where('message', 'like', "%{$query}%")->where('ignore', '=', '0')->skip($skip)->take($limit)->get();
+            $tweets = Tweet::where('message', 'like', "%{$query}%")->where('ignore', '=', '0')->skip($skip)->take($limit)->orderBy('tweeted_at','desc')->get();
         } else {
-            $tweets = Tweet::where('ignore', '=', '0')->skip($skip)->take($limit)->get();
+            $tweets = Tweet::where('ignore', '=', '0')->skip($skip)->take($limit)->orderBy('tweeted_at','desc')->get();
         }
 
         return response($tweets->jsonSerialize(), Response::HTTP_OK);

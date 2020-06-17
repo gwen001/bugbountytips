@@ -12,6 +12,6 @@ class Tweet extends Model
      * @var array
      */
     protected $fillable = [
-        'twitter_id', 'message', 'ignore',
+        'twitter_id', 'message', 'ignore', 'tweeted_at',
     ];
 }

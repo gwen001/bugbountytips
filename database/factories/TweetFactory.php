@@ -14,5 +14,6 @@ $factory->define(Tweet::class, function (Faker $faker) {
         'twitter_id' => rand(100000,999999).rand(100000,999999).rand(100000,999999),
         'message' => $faker->paragraph(),
         'ignore' => $faker->boolean(),
+        'tweeted_at' => $faker->dateTime(),
     ];
 });

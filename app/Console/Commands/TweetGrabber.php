@@ -101,7 +101,8 @@ class TweetGrabber extends Command
 
                 $text = isset($item->full_text) ? $item->full_text : $item->text;
 
-                if( strpos($text,'RT ') === 0 ) {
+                // if( strpos($text,'RT ') === 0 ) {
+                if( isset($item->retweeted_status) ) {
                     echo $item->id_str." is a RT, skip\n";
                     continue;
                 }
@@ -117,7 +118,8 @@ class TweetGrabber extends Command
                 if( !$exist ) {
                     $r = Tweet::create([
                         'twitter_id' => $item->id_str,
-                        'message' => isset($item->full_text) ? $item->full_text : $item->text
+                        'message' => isset($item->full_text) ? $item->full_text : $item->text,
+                        'tweeted_at' => date( 'Y-m-d H:i:s', strtotime($item->created_at) ),
                     ]);
 
                     if( $r ) {

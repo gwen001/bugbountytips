@@ -46,7 +46,7 @@ class TweetsDataTable extends DataTable
      */
     public function query(Tweet $model)
     {
-        return $model->orderBy('id','desc')->newQuery();
+        return $model->orderBy('tweeted_at','desc')->newQuery();
     }
 
     /**
