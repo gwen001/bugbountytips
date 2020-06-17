@@ -87,6 +87,8 @@ class TweetGrabber extends Command
 
         do
         {
+            usleep( 1000 );
+
             $t_tweets = json_decode( Twitter::getSearch(['max_id'=>$max_id, 'q'=>'#bugbountytips', 'count'=>100, 'format'=>'json', 'tweet_mode'=>'extended']) );
             echo count($t_tweets->statuses)." tweets retrieved\n";
 
