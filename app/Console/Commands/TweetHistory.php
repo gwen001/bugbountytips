@@ -139,6 +139,9 @@ class TweetHistory extends Command
         $interval = $datetime1->diff($datetime2);
         echo $interval->days." days to grab\n";
 
+        // Day: 202004280000
+        // 202004280000 -> 202004282359
+
         for( $day=1 ; $day<=$interval->days ; $day++ )
         // for( $day=0 ; $day<$interval->days ; $day++ )
         {
@@ -173,7 +176,7 @@ class TweetHistory extends Command
 
         do
         {
-            usleep( 300000 );
+            usleep( 1000000 );
 
             $rand = rand( 0, $n_credentials );
             $creds = $this->credentials[ $rand ];
