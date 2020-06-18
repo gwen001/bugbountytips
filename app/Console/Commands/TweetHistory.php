@@ -202,10 +202,10 @@ class TweetHistory extends Command
             // if( array_key_exists("errors", $results) || array_key_exists("error", $results) ) {
             if( isset($results->error) ) {
                 if( stristr($results->error->message,'Please upgrade') ) {
-                    echo "Credentials removed: ".$creds[$this->i_consumer_key]."\n";
+                    $n_credentials--;
+                    echo "Credentials removed: ".$creds[$this->i_consumer_key]." (".$n_credentials." remaining)\n";
                     unset( $this->credentials[$rand] );
                     sort( $this->credentials );
-                    $n_credentials--;
 
                 }
                 if( $n_credentials <= 0 ) {
