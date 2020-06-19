@@ -12,6 +12,17 @@
     </div>
 </template>
 
+<script>
+    export default {
+        name: 'Disclaimer',
+        mounted() {
+            if( $(window).width() < 1400 ) {
+                $('#site-infos').hide();
+            }
+        }
+    }
+</script>
+
 <style>
     #site-infos div {
         padding-left: 5px;
