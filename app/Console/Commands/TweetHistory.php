@@ -137,7 +137,8 @@ class TweetHistory extends Command
         echo $interval->days." days to grab\n";
 
         // Day: 202004280000
-        // 202004280000 -> 202004282359
+        // 202004280000 -> 202004282359 -> 20200428
+        // 202001050000 -> 202001052359 -> 20200106
 
         for( $day=1 ; $day<=$interval->days ; $day++ )
         // for( $day=0 ; $day<$interval->days ; $day++ )
