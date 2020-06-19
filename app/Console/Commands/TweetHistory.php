@@ -100,9 +100,6 @@ class TweetHistory extends Command
 
         $from = $this->option('from') ? $this->option('from').'0000' : '201501010000';
         $to = $this->option('to') ? $this->option('to').'2359' : date('Ymd').'0000';
-        // $to = $this->option('to') ? $this->option('to').'0000' : '201501090000';
-        var_dump( $from );
-        var_dump( $to );
 
         $this->credentials = $this->parse_credentials();
 
@@ -161,7 +158,7 @@ class TweetHistory extends Command
     protected function grab( $date_start, $date_end )
     {
         $run = true;
-        $n_credentials = count( $this->credentials ) - 1;
+        $n_credentials = count( $this->credentials );
         $total = 0;
         $n = 0;
 
@@ -178,7 +175,7 @@ class TweetHistory extends Command
         {
             usleep( 1000000 );
 
-            $rand = rand( 0, $n_credentials );
+            $rand = rand( 0, $n_credentials-1 );
             $creds = $this->credentials[ $rand ];
             $api_url = str_replace( '__ENV__', $creds[$this->i_env], $this->api_url );
             // var_dump( $api_url );
@@ -194,12 +191,10 @@ class TweetHistory extends Command
             $query = $this->build_query( $params );
             // var_dump( $query );
             $twitter = new TwitterAPIExchange( $settings );
-            // $results = json_decode( $twitter->setGetfield($query)->buildOauth($api_url,'GET')->performRequest(), true );
             $results = json_decode( $twitter->setGetfield($query)->buildOauth($api_url,'GET')->performRequest() );
             // var_dump( $results );
             // exit();
 
-            // if( array_key_exists("errors", $results) || array_key_exists("error", $results) ) {
             if( isset($results->error) ) {
                 if( stristr($results->error->message,'Please upgrade') ) {
                     $n_credentials--;
@@ -219,9 +214,6 @@ class TweetHistory extends Command
             $n_results = count( $results->results );
             echo $n_results." n_results\n";
 
-            // $n = count( $results['results'] );
-            // $n = count( $results->results );
-
             if( $n_results )
             {
                 foreach( $results->results as $item )
@@ -235,9 +227,7 @@ class TweetHistory extends Command
                 }
             }
 
-            // if( isset($results['next']) ) {
             if( isset($results->next) ) {
-                // $params['next'] = $results['next'];
                 $params['next'] = $results->next;
             } else {
                 $run = false;
@@ -254,12 +244,6 @@ class TweetHistory extends Command
 
     protected function insert_item( $item )
     {
-        // echo $item->id_str."\n";
-        // echo date( 'Y-m-d H:i:s', strtotime($item->created_at) )."\n";
-        // echo "\n";
-        // return true;
-
-        // if( strpos($text,'RT ') === 0 ) {
         if( isset($item->retweeted_status) ) {
             echo $item->id_str." is a RT, skip\n";
             return false;
