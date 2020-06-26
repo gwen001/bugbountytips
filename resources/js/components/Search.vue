@@ -87,7 +87,7 @@
     }
     twitter-widget, iframe {
         margin-right: 10px;
-        max-width: 220px !important;
-        width: 220px !important;
+        /*max-width: 220px !important;
+        width: 220px !important; */
     }
 </style>

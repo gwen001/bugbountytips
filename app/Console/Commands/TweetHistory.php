@@ -139,6 +139,7 @@ class TweetHistory extends Command
         // Day: 202004280000
         // 202004280000 -> 202004282359 -> 20200428
         // 202001050000 -> 202001052359 -> 20200106
+        // 201912240000 -> 201912242359 -> 20191225
 
         for( $day=1 ; $day<=$interval->days ; $day++ )
         // for( $day=0 ; $day<$interval->days ; $day++ )
