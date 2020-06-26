@@ -7,7 +7,7 @@
         </div>
         <div class="col-6">
             This webservice is my contribution to the security industry, if you like it, you can support my work.
-            <a href="https://www.buymeacoffee.com/gwendallecoguic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" width="217" ></a>
+            <iframe src="https://github.com/sponsors/gwen001/button" title="Sponsor gwen001"></iframe>
         </div>
     </div>
 </template>
@@ -24,6 +24,12 @@
 </script>
 
 <style>
+    iframe {
+        border: 0px;
+        height: 35px;
+        margin-top: 10px;
+        width: 100%;
+    }
     #site-infos div {
         padding-left: 5px;
     }
