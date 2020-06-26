@@ -5,7 +5,6 @@ http://bugbountytips.me
 
 This webservice is my contribution to the security industry, if you like it, you can support my work.
 
-<iframe src="https://github.com/sponsors/gwen001/button" title="Sponsor gwen001" height="35" width="107" style="border:0;"></iframe>
+<a href="https://github.com/sponsors/gwen001" title="Sponsor gwen001"><img src="https://raw.githubusercontent.com/gwen001/pentest-tools/master/github-sponsor.jpg" alt="Sponsor gwen001" title="Sponsor gwen001"></a>
 
-<br><br>
 Found a bug? Feel free to open an issue https://github.com/gwen001/bugbountytips/issues

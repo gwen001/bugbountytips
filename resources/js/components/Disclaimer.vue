@@ -7,7 +7,7 @@
         </div>
         <div class="col-6">
             This webservice is my contribution to the security industry, if you like it, you can support my work.
-            <iframe src="https://github.com/sponsors/gwen001/button" title="Sponsor gwen001"></iframe>
+            <a href="https://github.com/sponsors/gwen001" title="Sponsor gwen001"><img src="https://raw.githubusercontent.com/gwen001/pentest-tools/master/github-sponsor.jpg" alt="Sponsor gwen001" title="Sponsor gwen001"></a>
         </div>
     </div>
 </template>
@@ -24,12 +24,6 @@
 </script>
 
 <style>
-    iframe {
-        border: 0px;
-        height: 35px;
-        margin-top: 10px;
-        width: 100%;
-    }
     #site-infos div {
         padding-left: 5px;
     }
