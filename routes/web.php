@@ -27,7 +27,7 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
     Route::name('tweet.update')->put('tweets/update', 'TweetController@update');
     Route::name('tweet.ignore')->get('tweets/ignore/{tweet}', 'TweetController@ignore');
     Route::name('tweet.unignore')->get('tweets/unignore/{tweet}', 'TweetController@unignore');
-    Route::name('tweet.destroy')->get('tweets//destroy/{tweet}', 'TweetController@destroy');
+    Route::name('tweet.destroy')->get('tweets/destroy/{tweet}', 'TweetController@destroy');
     Route::resource('tweets', 'TweetController')->except('show')->parameters([
         'tweet' => 'tweet'
       ]);

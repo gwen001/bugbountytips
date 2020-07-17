@@ -134,15 +134,17 @@ class TweetHistory extends Command
         $datetime1 = new \DateTime($from_date);
         $datetime2 = new \DateTime($to_date);
         $interval = $datetime1->diff($datetime2);
+        // $interval->days++;
         echo $interval->days." days to grab\n";
 
-        // Day: 202004280000
+        // Last archive: 20200716
+        // First archive: 20190101
         // 202004280000 -> 202004282359 -> 20200428
         // 202001050000 -> 202001052359 -> 20200106
         // 201912240000 -> 201912242359 -> 20191225
 
-        for( $day=1 ; $day<=$interval->days ; $day++ )
-        // for( $day=0 ; $day<$interval->days ; $day++ )
+        for( $day=0 ; $day<=$interval->days ; $day++ )
+        // for( $day=1 ; $day<$interval->days ; $day++ )
         {
             // $current_date_start = date('YmdHi',mktime(0,0,0,$from_month,$from_day+$day,$from_year));
             // $current_date_end = date('YmdHi',mktime(23,59,0,$from_month,$from_day+$day,$from_year));
