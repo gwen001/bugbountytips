@@ -200,6 +200,7 @@ class TweetHistory extends Command
             // exit();
 
             if( isset($results->error) ) {
+                var_dump( $results );
                 if( stristr($results->error->message,'Please upgrade') ) {
                     $n_credentials--;
                     echo "Credentials removed: ".$creds[$this->i_consumer_key]." (".$n_credentials." remaining)\n";
