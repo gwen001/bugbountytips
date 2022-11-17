@@ -30,8 +30,17 @@ class LoginController extends Controller
 
         $u = $_ENV['APP_ADMIN_LOGIN'];
         $p = $_ENV['APP_ADMIN_PASS'];
+        // var_dump( $u );
+        // var_dump( $p );
+        // var_dump( $request->login );
+        // var_dump( $request->password );
+        // var_dump( crypt($request->login,$u) );
+        // var_dump( hash_equals($u, crypt($request->login,$u)) );
+        // var_dump( crypt($request->password,$p) );
+        // var_dump( hash_equals($p, crypt($request->password,$p)) );
+        // exit();
 
-        if( hash_equals($u, crypt($request->login,$u)) && hash_equals($p, crypt($request->password,$p)) ) {
+        if( hash_equals($u,$request->login) && hash_equals($p,$request->password) ) {
             $request->session()->put('admin', 1);
             return redirect()->route('tweets.index');
         } else {

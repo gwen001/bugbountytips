@@ -21,6 +21,7 @@ class TweetsController extends Controller
             $tweets = Tweet::where('ignore', '=', '0')->skip($skip)->take($limit)->orderBy('tweeted_at','desc')->get();
         }
 
+        // var_dump($tweets);
         return response($tweets->jsonSerialize(), Response::HTTP_OK);
     }
 
