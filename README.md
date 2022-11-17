@@ -8,15 +8,15 @@
     <a href="https://twitter.com/intent/tweet?text=https%3a%2f%2fgithub.com%2fgwen001%2fbugbountytips%2f" target="_blank"><img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fgwen001%2Fbugbountytips" alt="twitter badge"></a>
 </p>
 
-<p align="center">
+<!-- <p align="center">
     <img src="https://img.shields.io/github/stars/gwen001/bugbountytips?style=social" alt="github stars badge">
     <img src="https://img.shields.io/github/watchers/gwen001/bugbountytips?style=social" alt="github watchers badge">
     <img src="https://img.shields.io/github/forks/gwen001/bugbountytips?style=social" alt="github forks badge">
-</p>
+</p> -->
 
 ---
 
-# Description
+## Description
 
 [#bugbountytips](http://bugbountytips.me) is a single page website made with love, by hackers for hackers.
 It's supposed to help to find useful tips on Twitter trought the hashtag [#bugbountytips](https://twitter.com/search?q=%23bugbountytips&src=typed_query&f=live).
